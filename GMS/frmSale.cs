@@ -52,7 +52,7 @@ namespace GMS
             }
             finally {
                 if (connection.State == ConnectionState.Open) {
-                    connection.Clone();
+                    connection.Close();
                 }
             }
         }
@@ -65,6 +65,11 @@ namespace GMS
         private void btnFindCustomer_Click(object sender, EventArgs e)
         {
             FindCustomerById();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
     

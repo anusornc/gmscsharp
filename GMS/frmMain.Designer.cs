@@ -41,6 +41,7 @@
             this.mnuWindows = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.mnuCustomerData = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +105,8 @@
             // 
             // mnuCustomer
             // 
+            this.mnuCustomer.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCustomerData});
             this.mnuCustomer.Name = "mnuCustomer";
             this.mnuCustomer.Size = new System.Drawing.Size(44, 20);
             this.mnuCustomer.Text = "ลูกค้า";
@@ -142,6 +145,13 @@
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // mnuCustomerData
+            // 
+            this.mnuCustomerData.Name = "mnuCustomerData";
+            this.mnuCustomerData.Size = new System.Drawing.Size(152, 22);
+            this.mnuCustomerData.Text = "ข้อมูลลูกค้า";
+            this.mnuCustomerData.Click += new System.EventHandler(this.mnuCustomerData_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +187,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuWindows;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuSaleReport;
+        private System.Windows.Forms.ToolStripMenuItem mnuCustomerData;
     }
 }
 

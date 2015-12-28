@@ -23,5 +23,12 @@ namespace GMS
             formSale.MdiParent = this;
             formSale.Show();
         }
+
+        private void mnuCustomerData_Click(object sender, EventArgs e)
+        {
+            frmCustomer formCustomer = new frmCustomer();
+            formCustomer.MdiParent = this;
+            formCustomer.Show();
+        }
     }
 }

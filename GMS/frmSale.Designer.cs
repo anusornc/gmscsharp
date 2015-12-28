@@ -37,6 +37,9 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnFindProduct = new System.Windows.Forms.Button();
             this.txtProductSalePrice = new System.Windows.Forms.TextBox();
             this.txtProductWeight = new System.Windows.Forms.TextBox();
             this.txtProductTexture = new System.Windows.Forms.TextBox();
@@ -48,11 +51,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnFindCustomer = new System.Windows.Forms.Button();
-            this.btnFindProduct = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -145,6 +145,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ข้อมูลสินค้า";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(340, 90);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(26, 13);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "บาท";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(154, 90);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(27, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "กรัม";
+            // 
+            // btnFindProduct
+            // 
+            this.btnFindProduct.Location = new System.Drawing.Point(138, 39);
+            this.btnFindProduct.Name = "btnFindProduct";
+            this.btnFindProduct.Size = new System.Drawing.Size(43, 23);
+            this.btnFindProduct.TabIndex = 12;
+            this.btnFindProduct.Text = "ค้นหา";
+            this.btnFindProduct.UseVisualStyleBackColor = true;
+            // 
             // txtProductSalePrice
             // 
             this.txtProductSalePrice.Location = new System.Drawing.Point(199, 83);
@@ -235,15 +262,6 @@
             this.btnFindCustomer.UseVisualStyleBackColor = true;
             this.btnFindCustomer.Click += new System.EventHandler(this.btnFindCustomer_Click);
             // 
-            // btnFindProduct
-            // 
-            this.btnFindProduct.Location = new System.Drawing.Point(138, 39);
-            this.btnFindProduct.Name = "btnFindProduct";
-            this.btnFindProduct.Size = new System.Drawing.Size(43, 23);
-            this.btnFindProduct.TabIndex = 12;
-            this.btnFindProduct.Text = "ค้นหา";
-            this.btnFindProduct.UseVisualStyleBackColor = true;
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(203, 209);
@@ -252,6 +270,7 @@
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -262,24 +281,6 @@
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(154, 90);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(27, 13);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "กรัม";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(340, 90);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(26, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "บาท";
             // 
             // panel1
             // 
