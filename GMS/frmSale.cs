@@ -32,19 +32,19 @@ namespace GMS
             {
                 connection.Open();
                 MySqlCommand cmd = connection.CreateCommand();
-                //cmd.CommandText = "SELECT * FROM gmsdb.sale_daily WHERE DATE(NOW()) = DATE(DATE_ADD(sale_date, INTERVAL 5 HOUR)) ;";
                 cmd.CommandText = "SELECT * FROM customer where customer_uid = '" + txtCustomerID.Text + "'";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-
-                if (ds.Tables.Count > 0)
+                if (reader.Read())
                 {
-                    txtFirstName.Text = ds.Tables[0].Columns["customer_name"].ToString();
-                    txtLastName.Text = ds.Tables[0].Columns["customer_surname"].ToString();
+                    txtFirstName.Text = reader.GetString("customer_name");
+                    txtLastName.Text = reader.GetString("customer_surname");
+                } else
+                {
+                    MessageBox.Show("ไม่พบข้อมูลลูกค้า โปรดทำการลงทะเบียนลูกค้าก่อน");
+                    
                 }
-                //dataGridView1.DataSource = ds.Tables[0].DefaultView;
+                
             }
             catch (Exception ex)
             {
