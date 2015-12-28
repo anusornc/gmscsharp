@@ -42,7 +42,7 @@ namespace GMS
                 } else
                 {
                     MessageBox.Show("ไม่พบข้อมูลลูกค้า โปรดทำการลงทะเบียนลูกค้าก่อน");
-                    
+                    status("ไม่พบข้อมูล");
                 }
                 
             }
@@ -69,7 +69,104 @@ namespace GMS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            DBConnect dbConnect = new DBConnect();
+            MySqlConnection connection = dbConnect.GetConnection();
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = " insert sale (customer_uid , product_id) " +
+                    " VALUES ('" + txtCustomerID.Text + "' , " +
+                    txtProductID.Text + "')";
+                cmd.ExecuteNonQuery();
+                status("บันทึกการขายเรียบร้อย");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+        }
 
+        private void txtCustomerID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) {
+                btnFindCustomer_Click(sender,e);
+                txtProductID.Focus();
+            }
+        }
+
+        private void txtCustomerID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtProductID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13) {
+                btnFindProduct_Click(sender, e);
+            }
+        }
+
+        private void btnFindProduct_Click(object sender, EventArgs e)
+        {
+            DBConnect dbConnect = new DBConnect();
+            MySqlConnection connection = dbConnect.GetConnection();
+            try
+            {
+                connection.Open();
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM product_detail where product_id = '" + txtProductID.Text + "'";
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    txtProductType.Text = reader.GetString("ptype_detail");
+                    txtProductTexture.Text = reader.GetString("product_texture");
+                    txtProductWeight.Text = reader.GetString("product_weight");
+                    txtProductSalePrice.Text = reader.GetDouble("product_sale_price").ToString();
+                }
+                else
+                {
+                    MessageBox.Show("ไม่พบข้อมูลสินค้า โปรดทำการลงในทะเบียนในสินค้าคงคลังก่อน");
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+        private void status(String msg)
+        {
+            lblStatus.Text = " สถานะ :" + msg;
+        }
+
+        private void clear()
+        {
+            txtCustomerID.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtProductID.Text = "";
+            txtProductType.Text = "";
+            txtProductTexture.Text = "";
+            txtProductWeight.Text = "";
+            txtProductSalePrice.Text = "";
         }
     }
     

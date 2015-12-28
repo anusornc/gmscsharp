@@ -44,7 +44,7 @@
             this.txtProductWeight = new System.Windows.Forms.TextBox();
             this.txtProductTexture = new System.Windows.Forms.TextBox();
             this.txtProductType = new System.Windows.Forms.TextBox();
-            this.txtProductIDD = new System.Windows.Forms.TextBox();
+            this.txtProductID = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.btnNew = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,8 @@
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(163, 20);
             this.txtCustomerID.TabIndex = 0;
+            this.txtCustomerID.TextChanged += new System.EventHandler(this.txtCustomerID_TextChanged);
+            this.txtCustomerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerID_KeyPress);
             // 
             // label1
             // 
@@ -113,6 +116,7 @@
             // 
             this.txtFirstName.Location = new System.Drawing.Point(70, 48);
             this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(212, 20);
             this.txtFirstName.TabIndex = 6;
             // 
@@ -120,6 +124,7 @@
             // 
             this.txtLastName.Location = new System.Drawing.Point(338, 48);
             this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(211, 20);
             this.txtLastName.TabIndex = 7;
             // 
@@ -132,7 +137,7 @@
             this.groupBox1.Controls.Add(this.txtProductWeight);
             this.groupBox1.Controls.Add(this.txtProductTexture);
             this.groupBox1.Controls.Add(this.txtProductType);
-            this.groupBox1.Controls.Add(this.txtProductIDD);
+            this.groupBox1.Controls.Add(this.txtProductID);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
@@ -171,11 +176,13 @@
             this.btnFindProduct.TabIndex = 12;
             this.btnFindProduct.Text = "ค้นหา";
             this.btnFindProduct.UseVisualStyleBackColor = true;
+            this.btnFindProduct.Click += new System.EventHandler(this.btnFindProduct_Click);
             // 
             // txtProductSalePrice
             // 
             this.txtProductSalePrice.Location = new System.Drawing.Point(199, 83);
             this.txtProductSalePrice.Name = "txtProductSalePrice";
+            this.txtProductSalePrice.ReadOnly = true;
             this.txtProductSalePrice.Size = new System.Drawing.Size(135, 20);
             this.txtProductSalePrice.TabIndex = 9;
             // 
@@ -183,6 +190,7 @@
             // 
             this.txtProductWeight.Location = new System.Drawing.Point(32, 83);
             this.txtProductWeight.Name = "txtProductWeight";
+            this.txtProductWeight.ReadOnly = true;
             this.txtProductWeight.Size = new System.Drawing.Size(122, 20);
             this.txtProductWeight.TabIndex = 8;
             // 
@@ -190,6 +198,7 @@
             // 
             this.txtProductTexture.Location = new System.Drawing.Point(372, 39);
             this.txtProductTexture.Name = "txtProductTexture";
+            this.txtProductTexture.ReadOnly = true;
             this.txtProductTexture.Size = new System.Drawing.Size(156, 20);
             this.txtProductTexture.TabIndex = 7;
             // 
@@ -197,15 +206,17 @@
             // 
             this.txtProductType.Location = new System.Drawing.Point(199, 39);
             this.txtProductType.Name = "txtProductType";
+            this.txtProductType.ReadOnly = true;
             this.txtProductType.Size = new System.Drawing.Size(167, 20);
             this.txtProductType.TabIndex = 6;
             // 
-            // txtProductIDD
+            // txtProductID
             // 
-            this.txtProductIDD.Location = new System.Drawing.Point(32, 39);
-            this.txtProductIDD.Name = "txtProductIDD";
-            this.txtProductIDD.Size = new System.Drawing.Size(100, 20);
-            this.txtProductIDD.TabIndex = 5;
+            this.txtProductID.Location = new System.Drawing.Point(32, 39);
+            this.txtProductID.Name = "txtProductID";
+            this.txtProductID.Size = new System.Drawing.Size(100, 20);
+            this.txtProductID.TabIndex = 5;
+            this.txtProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductID_KeyPress);
             // 
             // label10
             // 
@@ -264,7 +275,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(203, 209);
+            this.btnSave.Location = new System.Drawing.Point(257, 209);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 13;
@@ -274,7 +285,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(284, 209);
+            this.btnCancel.Location = new System.Drawing.Point(358, 209);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 14;
@@ -301,11 +312,21 @@
             this.lblStatus.TabIndex = 0;
             this.lblStatus.Text = "สถานะ:";
             // 
+            // btnNew
+            // 
+            this.btnNew.Location = new System.Drawing.Point(153, 209);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(75, 23);
+            this.btnNew.TabIndex = 16;
+            this.btnNew.Text = "ขายใหม่";
+            this.btnNew.UseVisualStyleBackColor = true;
+            // 
             // frmSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 267);
+            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -347,7 +368,7 @@
         private System.Windows.Forms.TextBox txtProductWeight;
         private System.Windows.Forms.TextBox txtProductTexture;
         private System.Windows.Forms.TextBox txtProductType;
-        private System.Windows.Forms.TextBox txtProductIDD;
+        private System.Windows.Forms.TextBox txtProductID;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -361,5 +382,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button btnNew;
     }
 }

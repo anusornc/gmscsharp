@@ -184,7 +184,7 @@ namespace GMS
                 btnDelete.Enabled = false;
                 btnSave.Enabled = true;
 
-
+                enableControl(true);
                 if (reader.Read())
                 {
                     isupdate = true;
@@ -211,8 +211,9 @@ namespace GMS
                 {
                     status("ไม่พบข้อมูล สามารถลงทะเบียนใหม่");
                     isupdate = false;
+                    txtCustomerName.Focus();
                 }
-                enableControl(true);
+               
 
                 //dtgCustomer.DataSource = ds.Tables[0].DefaultView;
             }
@@ -276,6 +277,11 @@ namespace GMS
                 MessageBox.Show("ไม่พบข้อมูลสำหรับการลบ");
                 status("ไม่พบข้อมูล");
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
