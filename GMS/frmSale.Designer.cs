@@ -56,6 +56,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtProductVolumn = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -130,6 +132,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtProductVolumn);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.btnFindProduct);
@@ -321,6 +325,23 @@
             this.btnNew.Text = "ขายใหม่";
             this.btnNew.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(369, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "เหลือในสต๊อก";
+            // 
+            // txtProductVolumn
+            // 
+            this.txtProductVolumn.Location = new System.Drawing.Point(372, 83);
+            this.txtProductVolumn.Name = "txtProductVolumn";
+            this.txtProductVolumn.ReadOnly = true;
+            this.txtProductVolumn.Size = new System.Drawing.Size(156, 20);
+            this.txtProductVolumn.TabIndex = 14;
+            // 
             // frmSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,5 +404,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.TextBox txtProductVolumn;
+        private System.Windows.Forms.Label label5;
     }
 }

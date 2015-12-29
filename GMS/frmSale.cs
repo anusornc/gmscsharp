@@ -71,18 +71,37 @@ namespace GMS
         {
             DBConnect dbConnect = new DBConnect();
             MySqlConnection connection = dbConnect.GetConnection();
+            MySqlTransaction trans = null;
+
             try
             {
                 connection.Open();
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = " insert sale (customer_uid , product_id) " +
-                    " VALUES ('" + txtCustomerID.Text + "' , " +
+                trans = connection.BeginTransaction();
+
+                MySqlCommand cmdInsert = connection.CreateCommand();
+                MySqlCommand cmdUpdate = connection.CreateCommand();
+
+                cmdInsert.Transaction = trans;
+                cmdUpdate.Transaction = trans;
+
+
+                cmdInsert.CommandText = " insert sale (customer_uid , product_id) " +
+                    " VALUES ('" + txtCustomerID.Text + "' , '" +
                     txtProductID.Text + "')";
-                cmd.ExecuteNonQuery();
+                cmdInsert.ExecuteNonQuery();
+
+                cmdUpdate.CommandText = " update product set product_volumn = product_volumn -1 where product_id = '" + txtProductID.Text + "'";
+                cmdUpdate.ExecuteNonQuery();
+
+                trans.Commit();
+
+                
                 status("บันทึกการขายเรียบร้อย");
+                FindProduct();
             }
             catch (Exception ex)
             {
+                trans.Rollback();
                 MessageBox.Show(ex.Message);
             }
             finally
@@ -116,6 +135,11 @@ namespace GMS
 
         private void btnFindProduct_Click(object sender, EventArgs e)
         {
+            FindProduct();
+        }
+
+        private void FindProduct()
+        {
             DBConnect dbConnect = new DBConnect();
             MySqlConnection connection = dbConnect.GetConnection();
             try
@@ -131,6 +155,7 @@ namespace GMS
                     txtProductTexture.Text = reader.GetString("product_texture");
                     txtProductWeight.Text = reader.GetString("product_weight");
                     txtProductSalePrice.Text = reader.GetDouble("product_sale_price").ToString();
+                    txtProductVolumn.Text = reader.GetInt16("product_volumn").ToString();
                 }
                 else
                 {
