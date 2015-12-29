@@ -61,9 +61,9 @@ namespace GMS
 
         private void mnuInventoryProductType_Click(object sender, EventArgs e)
         {
-            frmProductType formProductType = new frmProductType();
-            formProductType.MdiParent = this;
-            formProductType.Show();
+            frmProductDetails formProductDetails = new frmProductDetails();
+            formProductDetails.MdiParent = this;
+            formProductDetails.Show();
         }
     }
 }
