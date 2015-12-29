@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProductType = new System.Windows.Forms.DataGridView();
             this.ptype_detail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductType)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvProductType
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProductType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductType.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ptype_detail});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(324, 209);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvProductType.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProductType.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductType.Name = "dgvProductType";
+            this.dgvProductType.Size = new System.Drawing.Size(324, 209);
+            this.dgvProductType.TabIndex = 0;
             // 
             // ptype_detail
             // 
@@ -54,17 +54,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(324, 209);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProductType);
             this.Name = "frmProductType";
             this.Text = "ประเภทของสินค้า";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmProductType_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductType)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProductType;
         private System.Windows.Forms.DataGridViewTextBoxColumn ptype_detail;
     }
 }
