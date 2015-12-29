@@ -77,7 +77,7 @@
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.MdiWindowListItem = this.mnuWindows;
             this.menuMain.Name = "menuMain";
-            this.menuMain.Size = new System.Drawing.Size(635, 26);
+            this.menuMain.Size = new System.Drawing.Size(724, 26);
             this.menuMain.TabIndex = 1;
             this.menuMain.Text = "menuMain";
             // 
@@ -228,9 +228,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lbStatusDate});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 272);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 436);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(635, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(724, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -250,7 +250,7 @@
             this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 26);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(635, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(724, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -301,7 +301,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GMS.Properties.Resources.blurred_golden_background_11289575386nW6;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(635, 294);
+            this.ClientSize = new System.Drawing.Size(724, 458);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuMain);
