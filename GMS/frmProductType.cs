@@ -18,29 +18,71 @@ namespace GMS
             InitializeComponent();
         }
 
+        String sql = "SELECT ptype_id, ptype_detail FROM product_type";
+        MySqlDataAdapter adapter = null;
+        DataSet ds = null;
+        BindingSource bs = null;
+        MySqlCommandBuilder cmd = null;
         private void frmProductType_Load(object sender, EventArgs e)
         {
             DBConnect dbConnect = new DBConnect();
             MySqlConnection connection = dbConnect.GetConnection();
+            
+            
+            if (connection.State == ConnectionState.Closed)  connection.Open();
+            
+            adapter = new MySqlDataAdapter(sql, connection);
+            cmd = new MySqlCommandBuilder(adapter);
+
+            adapter.InsertCommand = cmd.GetInsertCommand();
+            adapter.UpdateCommand = cmd.GetUpdateCommand();
+            adapter.DeleteCommand = cmd.GetDeleteCommand();
+
+            ds = new DataSet();
+            adapter.Fill(ds,"product_type");
+
+            bs = new BindingSource();
+            bs.DataSource = ds.Tables[0].DefaultView;
+            bindingNavigatorProductType.BindingSource = bs;
+
+            dgvProductType.DataSource = null;
+            dgvProductType.DataSource=bs;
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
             try
             {
-                connection.Open();
-                String sql = "SELECT * FROM product_type";
-                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, connection);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                dgvProductType.DataSource = ds.Tables[0];
+                this.bs.EndEdit();
+                this.adapter.Update(ds, "product_type");
+                ds.AcceptChanges();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            catch (Exception err) {
+                MessageBox.Show(err.Message);
             }
-            finally
+
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("แน่ใจที่จะทำการลบ ?", "คำเตือน", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
+                this.bs.RemoveCurrent();
+            }
+        }
+
+        private void dgvProductType_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvProductType_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (ds.HasChanges())
+            {
+                dgvProductType.EndEdit();
+                btnSave_Click(sender, e);
             }
         }
     }

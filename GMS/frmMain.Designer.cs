@@ -64,6 +64,7 @@
             // 
             // menuMain
             // 
+            this.menuMain.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuSale,
             this.mnuBuy,
@@ -76,7 +77,7 @@
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.MdiWindowListItem = this.mnuWindows;
             this.menuMain.Name = "menuMain";
-            this.menuMain.Size = new System.Drawing.Size(635, 24);
+            this.menuMain.Size = new System.Drawing.Size(635, 26);
             this.menuMain.TabIndex = 1;
             this.menuMain.Text = "menuMain";
             // 
@@ -108,7 +109,7 @@
             this.mnuBuy.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuBuyDaily});
             this.mnuBuy.Name = "mnuBuy";
-            this.mnuBuy.Size = new System.Drawing.Size(32, 20);
+            this.mnuBuy.Size = new System.Drawing.Size(39, 22);
             this.mnuBuy.Text = "&ซื้อ";
             // 
             // mnuConsignment
@@ -117,7 +118,7 @@
             this.mnuConsignmentDaily,
             this.mnuConsignmentReport});
             this.mnuConsignment.Name = "mnuConsignment";
-            this.mnuConsignment.Size = new System.Drawing.Size(56, 20);
+            this.mnuConsignment.Size = new System.Drawing.Size(70, 22);
             this.mnuConsignment.Text = "ขาย&ฝาก";
             // 
             // mnuInventory
@@ -127,7 +128,7 @@
             this.mnuInventoryProduct,
             this.mnuInventoryProductType});
             this.mnuInventory.Name = "mnuInventory";
-            this.mnuInventory.Size = new System.Drawing.Size(70, 20);
+            this.mnuInventory.Size = new System.Drawing.Size(90, 22);
             this.mnuInventory.Text = "&สต๊อกสินค้า";
             // 
             // mnuCustomer
@@ -184,7 +185,7 @@
             this.toolStripButton3,
             this.toolStripSeparator1,
             this.toolStripButton4});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 26);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(635, 25);
             this.toolStrip1.TabIndex = 4;
@@ -193,20 +194,23 @@
             // mnuInventoryInput
             // 
             this.mnuInventoryInput.Name = "mnuInventoryInput";
-            this.mnuInventoryInput.Size = new System.Drawing.Size(152, 22);
+            this.mnuInventoryInput.Size = new System.Drawing.Size(181, 22);
             this.mnuInventoryInput.Text = "นำสินค้าเข้าสู่คลัง";
+            this.mnuInventoryInput.Click += new System.EventHandler(this.mnuInventoryInput_Click);
             // 
             // mnuInventoryProduct
             // 
             this.mnuInventoryProduct.Name = "mnuInventoryProduct";
-            this.mnuInventoryProduct.Size = new System.Drawing.Size(152, 22);
+            this.mnuInventoryProduct.Size = new System.Drawing.Size(181, 22);
             this.mnuInventoryProduct.Text = "รายการสินค้า";
+            this.mnuInventoryProduct.Click += new System.EventHandler(this.mnuInventoryProduct_Click);
             // 
             // mnuInventoryProductType
             // 
             this.mnuInventoryProductType.Name = "mnuInventoryProductType";
-            this.mnuInventoryProductType.Size = new System.Drawing.Size(152, 22);
+            this.mnuInventoryProductType.Size = new System.Drawing.Size(181, 22);
             this.mnuInventoryProductType.Text = "ประเภทสินค้า";
+            this.mnuInventoryProductType.Click += new System.EventHandler(this.mnuInventoryProductType_Click);
             // 
             // mnuEmployeeAdmin
             // 
@@ -224,15 +228,17 @@
             // 
             this.mnuBuyDaily.Name = "mnuBuyDaily";
             this.mnuBuyDaily.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.mnuBuyDaily.Size = new System.Drawing.Size(152, 22);
+            this.mnuBuyDaily.Size = new System.Drawing.Size(172, 22);
             this.mnuBuyDaily.Text = "ซื้อประจำวัน";
+            this.mnuBuyDaily.Click += new System.EventHandler(this.mnuBuyDaily_Click);
             // 
             // mnuConsignmentDaily
             // 
             this.mnuConsignmentDaily.Name = "mnuConsignmentDaily";
             this.mnuConsignmentDaily.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.mnuConsignmentDaily.Size = new System.Drawing.Size(153, 22);
+            this.mnuConsignmentDaily.Size = new System.Drawing.Size(181, 22);
             this.mnuConsignmentDaily.Text = "ระบบขายฝาก";
+            this.mnuConsignmentDaily.Click += new System.EventHandler(this.mnuConsignmentDaily_Click);
             // 
             // mnuConsignmentReport
             // 
@@ -291,6 +297,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GMS.Properties.Resources.blurred_golden_background_11289575386nW6;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(635, 294);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);

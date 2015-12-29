@@ -30,5 +30,40 @@ namespace GMS
             formCustomer.MdiParent = this;
             formCustomer.Show();
         }
+
+        private void mnuBuyDaily_Click(object sender, EventArgs e)
+        {
+            frmBuyGold formBuyGold = new frmBuyGold();
+            formBuyGold.MdiParent = this;
+            formBuyGold.Show();
+        }
+
+        private void mnuConsignmentDaily_Click(object sender, EventArgs e)
+        {
+            frmConsignment formConsignment = new frmConsignment();
+            formConsignment.MdiParent = this;
+            formConsignment.Show();
+        }
+
+        private void mnuInventoryInput_Click(object sender, EventArgs e)
+        {
+            frmInventory formInventory = new frmInventory();
+            formInventory.MdiParent = this;
+            formInventory.Show();
+        }
+
+        private void mnuInventoryProduct_Click(object sender, EventArgs e)
+        {
+            frmProduct formProduct = new frmProduct();
+            formProduct.MdiParent = this;
+            formProduct.Show();
+        }
+
+        private void mnuInventoryProductType_Click(object sender, EventArgs e)
+        {
+            frmProductType formProductType = new frmProductType();
+            formProductType.MdiParent = this;
+            formProductType.Show();
+        }
     }
 }
