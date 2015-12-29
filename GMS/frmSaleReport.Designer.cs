@@ -1,6 +1,6 @@
 ﻿namespace GMS
 {
-    partial class frmProduct
+    partial class frm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // frmProduct
+            // frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(577, 344);
-            this.Name = "frmProduct";
-            this.Text = "ข้อมูลสินค้า";
+            this.Name = "frm";
+            this.Text = "สรุปการขาย";
             this.ResumeLayout(false);
 
         }

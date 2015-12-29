@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GMS
 {
-    public partial class frmProduct : Form
+    public partial class frm : Form
     {
-        public frmProduct()
+        public frm()
         {
             InitializeComponent();
         }

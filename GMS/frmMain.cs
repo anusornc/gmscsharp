@@ -54,7 +54,7 @@ namespace GMS
 
         private void mnuInventoryProduct_Click(object sender, EventArgs e)
         {
-            frmProduct formProduct = new frmProduct();
+            frm formProduct = new frm();
             formProduct.MdiParent = this;
             formProduct.Show();
         }

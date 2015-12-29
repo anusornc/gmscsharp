@@ -37,6 +37,8 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtProductVolumn = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btnFindProduct = new System.Windows.Forms.Button();
@@ -56,8 +58,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtProductVolumn = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +85,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(338, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(211, 20);
-            this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // label2
             // 
@@ -150,9 +150,26 @@
             this.groupBox1.Location = new System.Drawing.Point(15, 74);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(534, 119);
-            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ข้อมูลสินค้า";
+            // 
+            // txtProductVolumn
+            // 
+            this.txtProductVolumn.Location = new System.Drawing.Point(372, 83);
+            this.txtProductVolumn.Name = "txtProductVolumn";
+            this.txtProductVolumn.ReadOnly = true;
+            this.txtProductVolumn.Size = new System.Drawing.Size(156, 20);
+            this.txtProductVolumn.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(369, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "เหลือในสต๊อก";
             // 
             // label12
             // 
@@ -219,7 +236,7 @@
             this.txtProductID.Location = new System.Drawing.Point(32, 39);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(100, 20);
-            this.txtProductID.TabIndex = 5;
+            this.txtProductID.TabIndex = 1;
             this.txtProductID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProductID_KeyPress);
             // 
             // label10
@@ -272,7 +289,7 @@
             this.btnFindCustomer.Location = new System.Drawing.Point(239, 10);
             this.btnFindCustomer.Name = "btnFindCustomer";
             this.btnFindCustomer.Size = new System.Drawing.Size(43, 23);
-            this.btnFindCustomer.TabIndex = 11;
+            this.btnFindCustomer.TabIndex = 1;
             this.btnFindCustomer.Text = "ค้นหา";
             this.btnFindCustomer.UseVisualStyleBackColor = true;
             this.btnFindCustomer.Click += new System.EventHandler(this.btnFindCustomer_Click);
@@ -282,7 +299,7 @@
             this.btnSave.Location = new System.Drawing.Point(257, 209);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 13;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -292,7 +309,7 @@
             this.btnCancel.Location = new System.Drawing.Point(358, 209);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 14;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -321,26 +338,9 @@
             this.btnNew.Location = new System.Drawing.Point(153, 209);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 16;
+            this.btnNew.TabIndex = 5;
             this.btnNew.Text = "ขายใหม่";
             this.btnNew.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(369, 67);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "เหลือในสต๊อก";
-            // 
-            // txtProductVolumn
-            // 
-            this.txtProductVolumn.Location = new System.Drawing.Point(372, 83);
-            this.txtProductVolumn.Name = "txtProductVolumn";
-            this.txtProductVolumn.ReadOnly = true;
-            this.txtProductVolumn.Size = new System.Drawing.Size(156, 20);
-            this.txtProductVolumn.TabIndex = 14;
             // 
             // frmSale
             // 
