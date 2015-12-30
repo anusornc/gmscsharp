@@ -34,9 +34,11 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnFindCustomer = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtProductSalePrice = new System.Windows.Forms.TextBox();
+            this.txtProductBuyPrice = new System.Windows.Forms.TextBox();
             this.txtProductWeight = new System.Windows.Forms.TextBox();
             this.txtProductTexture = new System.Windows.Forms.TextBox();
             this.txtProductType = new System.Windows.Forms.TextBox();
@@ -53,8 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.btnNew = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtProductName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +95,7 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "บันทึก";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnFindCustomer
             // 
@@ -104,6 +105,7 @@
             this.btnFindCustomer.TabIndex = 1;
             this.btnFindCustomer.Text = "ค้นหา";
             this.btnFindCustomer.UseVisualStyleBackColor = true;
+            this.btnFindCustomer.Click += new System.EventHandler(this.btnFindCustomer_Click);
             // 
             // groupBox1
             // 
@@ -111,7 +113,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.txtProductSalePrice);
+            this.groupBox1.Controls.Add(this.txtProductBuyPrice);
             this.groupBox1.Controls.Add(this.txtProductWeight);
             this.groupBox1.Controls.Add(this.txtProductTexture);
             this.groupBox1.Controls.Add(this.txtProductType);
@@ -125,6 +127,22 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ข้อมูลทองคำที่รับซื้อ";
+            // 
+            // txtProductName
+            // 
+            this.txtProductName.Location = new System.Drawing.Point(23, 30);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(505, 20);
+            this.txtProductName.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(69, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "รายการรับซื้อ";
             // 
             // label12
             // 
@@ -144,12 +162,12 @@
             this.label11.TabIndex = 10;
             this.label11.Text = "กรัม";
             // 
-            // txtProductSalePrice
+            // txtProductBuyPrice
             // 
-            this.txtProductSalePrice.Location = new System.Drawing.Point(224, 115);
-            this.txtProductSalePrice.Name = "txtProductSalePrice";
-            this.txtProductSalePrice.Size = new System.Drawing.Size(144, 20);
-            this.txtProductSalePrice.TabIndex = 4;
+            this.txtProductBuyPrice.Location = new System.Drawing.Point(224, 115);
+            this.txtProductBuyPrice.Name = "txtProductBuyPrice";
+            this.txtProductBuyPrice.Size = new System.Drawing.Size(144, 20);
+            this.txtProductBuyPrice.TabIndex = 4;
             // 
             // txtProductWeight
             // 
@@ -212,6 +230,7 @@
             // 
             this.txtLastName.Location = new System.Drawing.Point(339, 48);
             this.txtLastName.Name = "txtLastName";
+            this.txtLastName.ReadOnly = true;
             this.txtLastName.Size = new System.Drawing.Size(211, 20);
             this.txtLastName.TabIndex = 3;
             // 
@@ -219,6 +238,7 @@
             // 
             this.txtFirstName.Location = new System.Drawing.Point(71, 48);
             this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.ReadOnly = true;
             this.txtFirstName.Size = new System.Drawing.Size(212, 20);
             this.txtFirstName.TabIndex = 2;
             // 
@@ -271,6 +291,7 @@
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(163, 20);
             this.txtCustomerID.TabIndex = 0;
+            this.txtCustomerID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCustomerID_KeyPress);
             // 
             // btnNew
             // 
@@ -280,22 +301,7 @@
             this.btnNew.TabIndex = 7;
             this.btnNew.Text = "ซื้อใหม่";
             this.btnNew.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "รายการรับซื้อ";
-            // 
-            // txtProductName
-            // 
-            this.txtProductName.Location = new System.Drawing.Point(23, 30);
-            this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(505, 20);
-            this.txtProductName.TabIndex = 0;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // frmBuyGold
             // 
@@ -338,7 +344,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtProductSalePrice;
+        private System.Windows.Forms.TextBox txtProductBuyPrice;
         private System.Windows.Forms.TextBox txtProductWeight;
         private System.Windows.Forms.TextBox txtProductTexture;
         private System.Windows.Forms.TextBox txtProductType;
