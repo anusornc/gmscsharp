@@ -211,6 +211,7 @@
             this.mnuEmployeeChangePassword.Name = "mnuEmployeeChangePassword";
             this.mnuEmployeeChangePassword.Size = new System.Drawing.Size(167, 22);
             this.mnuEmployeeChangePassword.Text = "เปลี่ยนรหัสผ่าน";
+            this.mnuEmployeeChangePassword.Click += new System.EventHandler(this.mnuEmployeeChangePassword_Click);
             // 
             // mnuPromotion
             // 

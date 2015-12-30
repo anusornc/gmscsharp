@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GMS
 {
-    public partial class frmEmployee : Form
+    public partial class frmChangePassword : Form
     {
-        public frmEmployee()
+        public frmChangePassword()
         {
             InitializeComponent();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

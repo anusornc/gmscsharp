@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GMS
@@ -16,7 +13,17 @@ namespace GMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            DialogResult result;
+            using (var loginForm = new frmLogin())
+                result = loginForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                // login was successful
+                frmMain f = new frmMain();
+                f.username = 
+                Application.Run(new frmMain());
+            }
+
         }
     }
 }

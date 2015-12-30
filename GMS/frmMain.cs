@@ -12,6 +12,7 @@ namespace GMS
 {
     public partial class frmMain : Form
     {
+        public String username = null;
         public frmMain()
         {
             InitializeComponent();
@@ -64,6 +65,12 @@ namespace GMS
             frmProductDetails formProductDetails = new frmProductDetails();
             formProductDetails.MdiParent = this;
             formProductDetails.Show();
+        }
+
+        private void mnuEmployeeChangePassword_Click(object sender, EventArgs e)
+        {
+            frmChangePassword f = new frmChangePassword();
+            f.ShowDialog();
         }
     }
 }
